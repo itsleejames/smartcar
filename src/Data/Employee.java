@@ -1,28 +1,16 @@
+
 package Data;
 
-// Employee class is a subclass of Person class
 public class Employee extends Person {
-    private int empNo; // Employee number
+    private int empNo;
 
-    // Constructor
-    public Employee(String firstname, String lastname, String email, String address, int empNo) {
-        super(firstname, lastname, email, address);
-        this.empNo = empNo; // Set the employee number
+    public Employee(String firstName, String lastName, String email, String address, int empNo) {
+        super(firstName, lastName, email, address);
+        this.empNo = empNo;
     }
 
-    // Display employee details
     @Override
     public String toString() {
-        return "Employee ID: " + empNo + "\n" + super.toString();
-    }
-
-    // Getter for employee number
-    public int getEmpNo() {
-        return empNo;
-    }
-
-    // Setter for employee number
-    public void setEmpNo(int empNo) {
-        this.empNo = empNo;
+        return super.toString() + String.format(", Employee No: %d", empNo);
     }
 }

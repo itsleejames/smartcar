@@ -1,18 +1,16 @@
+
 package Data;
 
-// Customer class is a subclass of Person class
 public class Customer extends Person {
-    private int custNo; // Customer number
+    private int custNo;
 
-    // Constructor
-    public Customer(String firstname, String lastname, String email, String address, int custNo) {
-        super(firstname, lastname, email, address);
-        this.custNo = custNo; // Set the customer number
+    public Customer(String firstName, String lastName, String email, String address, int custNo) {
+        super(firstName, lastName, email, address);
+        this.custNo = custNo;
     }
 
-    // Display customer details
     @Override
     public String toString() {
-        return "Customer ID: " + custNo + "\n" + super.toString();
+        return super.toString() + String.format(", Customer No: %d", custNo);
     }
 }

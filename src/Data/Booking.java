@@ -1,20 +1,20 @@
+
 package Data;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
 public class Booking {
-    private int bookingId; // Booking number
-    private int vehicleId; // Vehicle number
-    private int custNo; // Customer number
-    private LocalDate pickUpDate; // Pick up date
-    private LocalTime pickUpTime; // Pick up time
-    private LocalDate returnDate; // Return date
-    private LocalTime returnTime; // Return time
-    private String pickUpLocation; // Pick up location
+    private int bookingId;
+    private int vehicleId;
+    private int custNo;
+    private LocalDate pickUpDate;
+    private LocalTime pickUpTime;
+    private LocalDate returnDate;
+    private LocalTime returnTime;
+    private String pickUpLocation;
 
-    // Constructor
-    public Booking(int bookingId, int vehicleId, int custNo, LocalDate pickUpDate, LocalTime pickUpTime, LocalDate returnDate, LocalTime returnTime, String pickUpLocation, double rate) {
+    public Booking(int bookingId, int vehicleId, int custNo, LocalDate pickUpDate, LocalTime pickUpTime, LocalDate returnDate, LocalTime returnTime, String pickUpLocation) {
         this.bookingId = bookingId;
         this.vehicleId = vehicleId;
         this.custNo = custNo;
@@ -25,15 +25,9 @@ public class Booking {
         this.pickUpLocation = pickUpLocation;
     }
 
-    // Display booking details
     @Override
     public String toString() {
-        return "Booking Details:" +
-                "\nBooking ID: " + bookingId +
-                "\nVehicle ID: " + vehicleId +
-                "\nCustomer Number: " + custNo +
-                "\nPick-Up Date & Time: " + pickUpDate + " at " + pickUpTime +
-                "\nReturn Date & Time: " + returnDate + " at " + returnTime +
-                "\nPick-Up Location: " + pickUpLocation;
+        return String.format("Booking ID: %d, Vehicle ID: %d, Customer No: %d, Pickup: %s %s, Return: %s %s, Location: %s",
+                bookingId, vehicleId, custNo, pickUpDate, pickUpTime, returnDate, returnTime, pickUpLocation);
     }
 }
