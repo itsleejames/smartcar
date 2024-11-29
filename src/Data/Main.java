@@ -14,15 +14,7 @@ public class Main {
     private static int vehicleCounter = 1;
 
     public static void main(String[] args) {
-        populateDummyData();
         showMainMenu();
-    }
-
-    private static void populateDummyData() {
-        fleet.add(new SmartCity(vehicleCounter++, "181-L-123", "Nissan", "Micra", LocalDate.now(), Location.LIMERICK, 1.2, 100));
-        fleet.add(new SmartElectric(vehicleCounter++, "181-EV-456", "Tesla", "Model 3", LocalDate.now(), Location.SHANNON, 75, 400, 15));
-        customers.add(new Customer("Lee", "Heffernan", "K00297799@STUDENT.TUS.IE", "Limerick", 1));
-        employees.add(new Employee("John", "Smith", "john@leejames.ie", "Limerick", 1));
     }
 
     private static void showMainMenu() {
@@ -120,34 +112,34 @@ public class Main {
     }
 
     private static void listBookings() {
-        StringBuilder sb = new StringBuilder("List of Bookings:\n");
+        String result = "List of Bookings:\n";
         for (Booking booking : bookings) {
-            sb.append(booking).append("\n");
+            result += booking + "\n";
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
+        JOptionPane.showMessageDialog(null, result);
     }
 
     private static void listCustomers() {
-        StringBuilder sb = new StringBuilder("List of Customers:\n");
+        String result = "List of Customers:\n";
         for (Customer customer : customers) {
-            sb.append(customer).append("\n");
+            result += customer + "\n";
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
+        JOptionPane.showMessageDialog(null, result);
     }
 
     private static void listVehicles() {
-        StringBuilder sb = new StringBuilder("List of Vehicles:\n");
+        String result = "List of Vehicles:\n";
         for (Vehicle vehicle : fleet) {
-            sb.append(vehicle).append("\n");
+            result += vehicle + "\n";
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
+        JOptionPane.showMessageDialog(null, result);
     }
 
     private static void listEmployees() {
-        StringBuilder sb = new StringBuilder("List of Employees:\n");
+        String result = "List of Employees:\n";
         for (Employee employee : employees) {
-            sb.append(employee).append("\n");
+            result += employee + "\n";
         }
-        JOptionPane.showMessageDialog(null, sb.toString());
+        JOptionPane.showMessageDialog(null, result);
     }
 }
