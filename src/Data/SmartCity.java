@@ -14,6 +14,7 @@ public class SmartCity extends Petrol {
 
     // Overriding the calculateRate method from Vehicle class
     @Override
+
     public double calculateRate(int hours, int km) {
         // Calculate base rate based on hours or daily rate
         double baseRate = (hours <= 24) ? hours * HOURLY_RATE : DAILY_RATE;
